@@ -16,6 +16,9 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 import java.util.Random;
 import Login.mainWindow;
+import java.awt.Dimension;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 /**
  *
  * @author ifzal
@@ -30,7 +33,7 @@ public class HomeUser extends javax.swing.JFrame {
     }
     int xMouse;
     int yMouse;
-    float total = 0;
+    int total = 0;
     static String user = "";
     /**
      * This method is called from within the constructor to initialize the form.
@@ -100,7 +103,8 @@ public class HomeUser extends javax.swing.JFrame {
         seatcountcombo = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
         totalamountlabel = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        AccountInfoPanel = new javax.swing.JPanel();
         Mylabel = new javax.swing.JLabel();
         Mylabel1 = new javax.swing.JLabel();
         Mylabel2 = new javax.swing.JLabel();
@@ -112,6 +116,19 @@ public class HomeUser extends javax.swing.JFrame {
         emaillabel = new javax.swing.JLabel();
         mobilelabel = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
+        AboutPanel = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
+        BookedPanel = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Bookingtable = new javax.swing.JTable();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        bookingcombo = new javax.swing.JComboBox<>();
+        jLabel20 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         bookticketmenubtn = new javax.swing.JMenuItem();
@@ -195,7 +212,8 @@ public class HomeUser extends javax.swing.JFrame {
         jLayeredPane1.setBackground(new java.awt.Color(153, 0, 51));
         jLayeredPane1.setLayout(new java.awt.CardLayout());
 
-        Dashboard.setBackground(new java.awt.Color(153, 0, 51));
+        Dashboard.setBackground(new java.awt.Color(64, 64, 64));
+        Dashboard.setForeground(new java.awt.Color(223, 245, 242));
         Dashboard.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 DashboardFocusGained(evt);
@@ -204,6 +222,7 @@ public class HomeUser extends javax.swing.JFrame {
         Dashboard.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tekton Pro Cond", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setText("In Cinemas:");
         Dashboard.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 25, 181, 28));
 
@@ -287,36 +306,42 @@ public class HomeUser extends javax.swing.JFrame {
         Dashboard.add(upcominglabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 370, 180, 210));
 
         jLabel2.setFont(jLabel1.getFont());
+        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
         jLabel2.setText("Upcoming Movies:");
         Dashboard.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 200, -1));
 
         moviename1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        moviename1.setForeground(new java.awt.Color(204, 204, 204));
         moviename1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Dashboard.add(moviename1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 160, 30));
 
         moviename2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        moviename2.setForeground(new java.awt.Color(204, 204, 204));
         moviename2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Dashboard.add(moviename2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 300, 160, 30));
 
         moviename3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        moviename3.setForeground(new java.awt.Color(204, 204, 204));
         moviename3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Dashboard.add(moviename3, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 300, 160, 30));
 
+        upcomingmovie1.setForeground(new java.awt.Color(204, 204, 204));
         upcomingmovie1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Dashboard.add(upcomingmovie1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 600, 160, 30));
 
+        upcomingmovie2.setForeground(new java.awt.Color(204, 204, 204));
         upcomingmovie2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Dashboard.add(upcomingmovie2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 600, 160, 30));
 
+        upcomingmovie3.setForeground(new java.awt.Color(204, 204, 204));
         upcomingmovie3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Dashboard.add(upcomingmovie3, new org.netbeans.lib.awtextra.AbsoluteConstraints(774, 600, 160, 30));
 
         jLayeredPane1.add(Dashboard, "card2");
 
-        SelectMoviePanel.setBackground(new java.awt.Color(153, 0, 51));
+        SelectMoviePanel.setBackground(new java.awt.Color(64, 64, 64));
 
-        backbtn.setBackground(new java.awt.Color(0, 0, 0));
-        backbtn.setForeground(new java.awt.Color(255, 0, 51));
+        backbtn.setBackground(new java.awt.Color(204, 204, 204));
         backbtn.setText("Back");
         backbtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         backbtn.setBorderPainted(false);
@@ -327,6 +352,7 @@ public class HomeUser extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Orator Std", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
         jLabel3.setText("Select a movie");
 
         jComboBox1.setForeground(new java.awt.Color(255, 0, 51));
@@ -338,8 +364,7 @@ public class HomeUser extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setForeground(new java.awt.Color(255, 0, 51));
+        jButton1.setBackground(new java.awt.Color(204, 204, 204));
         jButton1.setText("Book Tickets");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.setBorderPainted(false);
@@ -383,10 +408,9 @@ public class HomeUser extends javax.swing.JFrame {
 
         jLayeredPane1.add(SelectMoviePanel, "card3");
 
-        MovieInfoPanel.setBackground(new java.awt.Color(153, 0, 51));
+        MovieInfoPanel.setBackground(new java.awt.Color(64, 64, 64));
 
-        backbtn1.setBackground(new java.awt.Color(0, 0, 0));
-        backbtn1.setForeground(new java.awt.Color(255, 0, 51));
+        backbtn1.setBackground(new java.awt.Color(204, 204, 204));
         backbtn1.setText("Back");
         backbtn1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         backbtn1.setBorderPainted(false);
@@ -397,22 +421,27 @@ public class HomeUser extends javax.swing.JFrame {
         });
 
         synopsislabel.setFont(new java.awt.Font("Segoe Print", 0, 18)); // NOI18N
+        synopsislabel.setForeground(new java.awt.Color(204, 204, 204));
         synopsislabel.setToolTipText("");
         synopsislabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         Castlabel.setFont(new java.awt.Font("Tekton Pro Cond", 0, 18)); // NOI18N
+        Castlabel.setForeground(new java.awt.Color(204, 204, 204));
 
         directorlabel.setFont(new java.awt.Font("Tekton Pro Cond", 0, 18)); // NOI18N
+        directorlabel.setForeground(new java.awt.Color(204, 204, 204));
 
         producerlabel.setFont(new java.awt.Font("Tekton Pro Cond", 0, 18)); // NOI18N
+        producerlabel.setForeground(new java.awt.Color(204, 204, 204));
 
         releaselabel.setFont(new java.awt.Font("Tekton Pro Cond", 0, 18)); // NOI18N
+        releaselabel.setForeground(new java.awt.Color(204, 204, 204));
 
         languageslabel.setFont(new java.awt.Font("Tekton Pro Cond", 0, 18)); // NOI18N
+        languageslabel.setForeground(new java.awt.Color(204, 204, 204));
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setBackground(new java.awt.Color(204, 204, 204));
         jButton2.setFont(new java.awt.Font("Stencil Std", 0, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 0, 51));
         jButton2.setText("Book Now");
         jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton2.setBorderPainted(false);
@@ -474,28 +503,30 @@ public class HomeUser extends javax.swing.JFrame {
 
         jLayeredPane1.add(MovieInfoPanel, "card4");
 
-        TicketPanel.setBackground(new java.awt.Color(153, 0, 51));
+        TicketPanel.setBackground(new java.awt.Color(64, 64, 64));
 
         jLabel4.setFont(new java.awt.Font("Sitka Heading", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
         jLabel4.setText("Movie Name:");
 
         ticketname.setEditable(false);
-        ticketname.setBackground(new java.awt.Color(51, 51, 51));
+        ticketname.setBackground(new java.awt.Color(204, 204, 204));
         ticketname.setFont(new java.awt.Font("Tekton Pro Ext", 0, 14)); // NOI18N
-        ticketname.setForeground(new java.awt.Color(255, 0, 51));
+        ticketname.setForeground(new java.awt.Color(64, 64, 64));
 
         jLabel5.setFont(new java.awt.Font("Sitka Heading", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(204, 204, 204));
         jLabel5.setText("Select Date:");
 
         DateComboBox.setBackground(new java.awt.Color(51, 51, 51));
 
         jLabel6.setFont(jLabel5.getFont());
+        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
         jLabel6.setText("Select Show:");
 
         ShowComboBox.setBackground(new java.awt.Color(51, 51, 51));
 
-        jButton3.setBackground(new java.awt.Color(0, 0, 0));
-        jButton3.setForeground(new java.awt.Color(255, 0, 51));
+        jButton3.setBackground(new java.awt.Color(204, 204, 204));
         jButton3.setText("Back");
         jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton3.setBorderPainted(false);
@@ -506,10 +537,11 @@ public class HomeUser extends javax.swing.JFrame {
         });
 
         jLabel7.setFont(jLabel5.getFont());
+        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setText("Seat Class:");
 
         SeatComboBox.setBackground(new java.awt.Color(51, 51, 51));
-        SeatComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gold-150/-", "Platinum-210/-", "Recliner-300/-" }));
+        SeatComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Platinum", "Diamond", "Recliner" }));
         SeatComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SeatComboBoxActionPerformed(evt);
@@ -522,11 +554,11 @@ public class HomeUser extends javax.swing.JFrame {
         });
 
         jLabel8.setFont(jLabel5.getFont());
+        jLabel8.setForeground(new java.awt.Color(204, 204, 204));
         jLabel8.setText("No. of Seats");
 
-        jButton4.setBackground(new java.awt.Color(0, 0, 0));
+        jButton4.setBackground(new java.awt.Color(204, 204, 204));
         jButton4.setFont(new java.awt.Font("Tekton Pro Ext", 1, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 0, 51));
         jButton4.setText("Book Tickets");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -543,10 +575,16 @@ public class HomeUser extends javax.swing.JFrame {
         });
 
         jLabel9.setFont(jLabel5.getFont());
+        jLabel9.setForeground(new java.awt.Color(204, 204, 204));
         jLabel9.setText("Total Amount:");
 
         totalamountlabel.setFont(new java.awt.Font("Tekton Pro Ext", 1, 11)); // NOI18N
+        totalamountlabel.setForeground(new java.awt.Color(204, 204, 204));
         totalamountlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jLabel19.setFont(new java.awt.Font("Tempus Sans ITC", 1, 24)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("<html>Platinum - 150/- Diamond - 210/- Recliner - 300/- ");
 
         javax.swing.GroupLayout TicketPanelLayout = new javax.swing.GroupLayout(TicketPanel);
         TicketPanel.setLayout(TicketPanelLayout);
@@ -557,14 +595,6 @@ public class HomeUser extends javax.swing.JFrame {
                     .addGroup(TicketPanelLayout.createSequentialGroup()
                         .addGap(273, 273, 273)
                         .addGroup(TicketPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(TicketPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(ticketname, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(TicketPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(DateComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(TicketPanelLayout.createSequentialGroup()
                                 .addGroup(TicketPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
@@ -577,26 +607,43 @@ public class HomeUser extends javax.swing.JFrame {
                                     .addComponent(SeatComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
                                     .addComponent(seatcountcombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(totalamountlabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                    .addComponent(totalamountlabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(TicketPanelLayout.createSequentialGroup()
+                                .addGroup(TicketPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(TicketPanelLayout.createSequentialGroup()
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(ticketname, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(TicketPanelLayout.createSequentialGroup()
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(DateComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(TicketPanelLayout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(443, Short.MAX_VALUE))
+                .addGap(54, 54, 54))
         );
         TicketPanelLayout.setVerticalGroup(
             TicketPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TicketPanelLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(107, 107, 107)
-                .addGroup(TicketPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ticketname, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(TicketPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DateComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
+                .addGroup(TicketPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TicketPanelLayout.createSequentialGroup()
+                        .addGap(107, 107, 107)
+                        .addGroup(TicketPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ticketname, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(32, 32, 32)
+                        .addGroup(TicketPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DateComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(TicketPanelLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(15, 15, 15)
                 .addGroup(TicketPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ShowComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -619,45 +666,54 @@ public class HomeUser extends javax.swing.JFrame {
 
         jLayeredPane1.add(TicketPanel, "card5");
 
-        jPanel2.setBackground(new java.awt.Color(153, 0, 51));
-        jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        AccountInfoPanel.setBackground(new java.awt.Color(64, 64, 64));
+        AccountInfoPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jPanel2MouseEntered(evt);
+                AccountInfoPanelMouseEntered(evt);
             }
         });
 
         Mylabel.setFont(new java.awt.Font("Tekton Pro Cond", 0, 24)); // NOI18N
+        Mylabel.setForeground(new java.awt.Color(204, 204, 204));
         Mylabel.setText("UserName:");
 
         Mylabel1.setFont(new java.awt.Font("Tekton Pro Cond", 0, 24)); // NOI18N
+        Mylabel1.setForeground(new java.awt.Color(204, 204, 204));
         Mylabel1.setText("FirstName:");
 
         Mylabel2.setFont(new java.awt.Font("Tekton Pro Cond", 0, 24)); // NOI18N
+        Mylabel2.setForeground(new java.awt.Color(204, 204, 204));
         Mylabel2.setText("LastName:");
 
         Mylabel3.setFont(new java.awt.Font("Tekton Pro Cond", 0, 24)); // NOI18N
+        Mylabel3.setForeground(new java.awt.Color(204, 204, 204));
         Mylabel3.setText("Email Id:");
 
         Mylabel4.setFont(new java.awt.Font("Tekton Pro Cond", 0, 24)); // NOI18N
+        Mylabel4.setForeground(new java.awt.Color(204, 204, 204));
         Mylabel4.setText("Registered Mobile:");
 
-        userLabel.setFont(new java.awt.Font("Segoe Print", 0, 18)); // NOI18N
+        userLabel.setFont(new java.awt.Font("Prestige Elite Std", 0, 18)); // NOI18N
+        userLabel.setForeground(new java.awt.Color(204, 204, 204));
         userLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 userLabelMouseEntered(evt);
             }
         });
 
-        Firstlabel.setFont(new java.awt.Font("Segoe Print", 0, 18)); // NOI18N
+        Firstlabel.setFont(new java.awt.Font("Prestige Elite Std", 0, 18)); // NOI18N
+        Firstlabel.setForeground(new java.awt.Color(204, 204, 204));
 
-        Lastlabel.setFont(new java.awt.Font("Segoe Print", 0, 18)); // NOI18N
+        Lastlabel.setFont(new java.awt.Font("Prestige Elite Std", 0, 18)); // NOI18N
+        Lastlabel.setForeground(new java.awt.Color(204, 204, 204));
 
-        emaillabel.setFont(new java.awt.Font("Segoe Print", 0, 18)); // NOI18N
+        emaillabel.setFont(new java.awt.Font("Prestige Elite Std", 0, 18)); // NOI18N
+        emaillabel.setForeground(new java.awt.Color(204, 204, 204));
 
-        mobilelabel.setFont(new java.awt.Font("Segoe Print", 0, 18)); // NOI18N
+        mobilelabel.setFont(new java.awt.Font("Prestige Elite Std", 0, 18)); // NOI18N
+        mobilelabel.setForeground(new java.awt.Color(204, 204, 204));
 
-        jButton5.setBackground(new java.awt.Color(0, 0, 0));
-        jButton5.setForeground(new java.awt.Color(255, 0, 51));
+        jButton5.setBackground(new java.awt.Color(204, 204, 204));
         jButton5.setText("Back");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -665,69 +721,239 @@ public class HomeUser extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(Mylabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(Firstlabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(Mylabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(Lastlabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(Mylabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(emaillabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(Mylabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(mobilelabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(Mylabel, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(userLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(531, Short.MAX_VALUE))
+        javax.swing.GroupLayout AccountInfoPanelLayout = new javax.swing.GroupLayout(AccountInfoPanel);
+        AccountInfoPanel.setLayout(AccountInfoPanelLayout);
+        AccountInfoPanelLayout.setHorizontalGroup(
+            AccountInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AccountInfoPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(956, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AccountInfoPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(AccountInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(AccountInfoPanelLayout.createSequentialGroup()
+                        .addComponent(Mylabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Firstlabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(AccountInfoPanelLayout.createSequentialGroup()
+                        .addComponent(Mylabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Lastlabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(AccountInfoPanelLayout.createSequentialGroup()
+                        .addComponent(Mylabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(emaillabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(AccountInfoPanelLayout.createSequentialGroup()
+                        .addComponent(Mylabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(mobilelabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(AccountInfoPanelLayout.createSequentialGroup()
+                        .addComponent(Mylabel, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(userLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(299, 299, 299))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        AccountInfoPanelLayout.setVerticalGroup(
+            AccountInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AccountInfoPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGap(129, 129, 129)
+                .addGroup(AccountInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(userLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Mylabel, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
+                    .addComponent(Mylabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(AccountInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Firstlabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Mylabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
+                    .addComponent(Mylabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(AccountInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Lastlabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Mylabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
+                    .addComponent(Mylabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(AccountInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(emaillabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Mylabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
+                    .addComponent(Mylabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Mylabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                    .addComponent(mobilelabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(308, Short.MAX_VALUE))
+                .addGroup(AccountInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Mylabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(mobilelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(211, Short.MAX_VALUE))
         );
 
-        jLayeredPane1.add(jPanel2, "card6");
+        jLayeredPane1.add(AccountInfoPanel, "card6");
+
+        AboutPanel.setBackground(new java.awt.Color(64, 64, 64));
+
+        jPanel4.setBackground(new java.awt.Color(170, 170, 170));
+
+        jLabel16.setFont(new java.awt.Font("Tekton Pro Cond", 2, 24)); // NOI18N
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setText("About the Software");
+
+        jLabel17.setFont(new java.awt.Font("Prestige Elite Std", 0, 24)); // NOI18N
+        jLabel17.setText("<html>This Software is developed as a part of Our DataBase Management System Mini-Project.This Software lets you book tickets for the latest released and upcoming movies");
+        jLabel17.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jLabel18.setFont(new java.awt.Font("Orator Std", 1, 18)); // NOI18N
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel18.setText("© 2019 MISK CINEMAS. ALL RIGHTS RESERVED.");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(90, 90, 90))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jButton6.setBackground(new java.awt.Color(204, 204, 204));
+        jButton6.setText("Back");
+        jButton6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton6.setBorderPainted(false);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout AboutPanelLayout = new javax.swing.GroupLayout(AboutPanel);
+        AboutPanel.setLayout(AboutPanelLayout);
+        AboutPanelLayout.setHorizontalGroup(
+            AboutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AboutPanelLayout.createSequentialGroup()
+                .addGroup(AboutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AboutPanelLayout.createSequentialGroup()
+                        .addGap(338, 338, 338)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(AboutPanelLayout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(232, Short.MAX_VALUE))
+        );
+        AboutPanelLayout.setVerticalGroup(
+            AboutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AboutPanelLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(92, 92, 92))
+        );
+
+        jLayeredPane1.add(AboutPanel, "card7");
+
+        BookedPanel.setBackground(new java.awt.Color(64, 64, 64));
+
+        Bookingtable.setBackground(new java.awt.Color(64, 64, 64));
+        Bookingtable.setForeground(new java.awt.Color(204, 204, 204));
+        Bookingtable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Booking_id", "Movie", "No_of_Seats", "Seat_Class", "Show_Date", "Show_Timing", "Booked_Date", "Amount"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Bookingtable.setGridColor(new java.awt.Color(0, 0, 0));
+        Bookingtable.setRowHeight(24);
+        jScrollPane1.setViewportView(Bookingtable);
+
+        jButton7.setBackground(new java.awt.Color(204, 204, 204));
+        jButton7.setText("Cancel Booking");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        jButton8.setBackground(new java.awt.Color(204, 204, 204));
+        jButton8.setText("Back");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        jLabel20.setFont(new java.awt.Font("Tekton Pro", 0, 18)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setText("-->To Cancel a booking select the Booking id below and press Cancel Booking Button<--");
+
+        javax.swing.GroupLayout BookedPanelLayout = new javax.swing.GroupLayout(BookedPanel);
+        BookedPanel.setLayout(BookedPanelLayout);
+        BookedPanelLayout.setHorizontalGroup(
+            BookedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BookedPanelLayout.createSequentialGroup()
+                .addContainerGap(63, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 924, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53))
+            .addGroup(BookedPanelLayout.createSequentialGroup()
+                .addGroup(BookedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BookedPanelLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(BookedPanelLayout.createSequentialGroup()
+                        .addGap(268, 268, 268)
+                        .addComponent(bookingcombo, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
+                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(BookedPanelLayout.createSequentialGroup()
+                .addGap(180, 180, 180)
+                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 692, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        BookedPanelLayout.setVerticalGroup(
+            BookedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BookedPanelLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(77, 77, 77)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addGroup(BookedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bookingcombo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(144, 144, 144))
+        );
+
+        jLayeredPane1.add(BookedPanel, "card8");
 
         getContentPane().add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 660));
 
@@ -752,6 +978,11 @@ public class HomeUser extends javax.swing.JFrame {
         jMenu1.add(acntinfomnubtn);
 
         bkdtcktshistbtn.setText("Booked Tickets");
+        bkdtcktshistbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bkdtcktshistbtnActionPerformed(evt);
+            }
+        });
         jMenu1.add(bkdtcktshistbtn);
 
         logoutbtn.setText("Log Out");
@@ -775,6 +1006,11 @@ public class HomeUser extends javax.swing.JFrame {
         jMenu2.setText("Extras");
 
         jMenuItem6.setText("About");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem6);
 
         jMenuBar1.add(jMenu2);
@@ -797,7 +1033,7 @@ public class HomeUser extends javax.swing.JFrame {
           String pattern = "yyyy-MM-dd";
             SimpleDateFormat sdf = new SimpleDateFormat(pattern);
             String date = "'"+sdf.format(new Date())+"'";
-          ResultSet rs1 = st.executeQuery("select MovieName,dashboardaddress from movietable where ReleaseDate <="+date+";");
+          ResultSet rs1 = st.executeQuery("select MovieName,dashboardaddress from movietable where ReleaseDate <="+date+" order by ReleaseDate desc;");
           rs1.absolute(1);
           posterlabel1.setIcon(new ImageIcon(rs1.getString(2)));
           moviename1.setText(rs1.getString(1));
@@ -809,7 +1045,7 @@ public class HomeUser extends javax.swing.JFrame {
           moviename3.setText(rs1.getString(1));
           
           
-          ResultSet rs = st.executeQuery("select MovieName,dashboardaddress from movietable where ReleaseDate >"+date+";");
+          ResultSet rs = st.executeQuery("select MovieName,dashboardaddress from movietable where ReleaseDate >"+date+" order by ReleaseDate;");
           rs.absolute(1);
           upcominglabel1.setIcon(new ImageIcon(rs.getString(2)));
           upcomingmovie1.setText(rs.getString(1));
@@ -821,7 +1057,7 @@ public class HomeUser extends javax.swing.JFrame {
           upcomingmovie3.setText(rs.getString(1));
           
      }catch(Exception e){
-         System.out.println(e);
+         JOptionPane.showMessageDialog(this, e);
      }    // TODO add your handling code here:
     }//GEN-LAST:event_formWindowActivated
 
@@ -841,7 +1077,7 @@ public class HomeUser extends javax.swing.JFrame {
             jComboBox1.addItem(rs.getString("MovieName"));
         }
     }catch(Exception e){
-        System.out.println(e);
+        JOptionPane.showMessageDialog(this, e);
     }
     jLayeredPane1.add(SelectMoviePanel);
     repaint();
@@ -873,15 +1109,38 @@ public class HomeUser extends javax.swing.JFrame {
         SimpleDateFormat sdf = new SimpleDateFormat(pattern);
         String date = sdf.format(new Date());
         if(v == JOptionPane.YES_OPTION){
+            addbookingdb(booking_id, date);
             jDialog1.setVisible(true);
             billbookamount.setText(Float.toString(total));
             billbookid.setText(Integer.toString(booking_id));
             billbookingdate.setText(date);
             billmoviename.setText(jComboBox1.getSelectedItem().toString());
             billmoviedate.setText(moviedatString);
+            jLayeredPane1.removeAll();
+            jLayeredPane1.add(Dashboard);
+            repaint();
+            revalidate();
         }// TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
-
+    public void addbookingdb(int booking_id,String date){
+        mainWindow mw = new mainWindow();
+        GetConnection gc = new GetConnection();
+        String dbmovie = ticketname.getText();
+        String dbshow_date = DateComboBox.getSelectedItem().toString();
+        String dbuser_id = mw.getUserName();
+        int dbbooking_id = booking_id;
+        String dbshow_timing = ShowComboBox.getSelectedItem().toString();
+        String dbbook_amount = Integer.toString(total);
+        String dbseat_class = SeatComboBox.getSelectedItem().toString();
+        String dbbooked_date = date;
+        String dbno_of_seats = seatcountcombo.getSelectedItem().toString();
+        String query = "insert into bookings values("+"'"+dbuser_id+"',"+"'"+dbmovie+"',"+""+dbbooking_id+","+"'"+dbshow_timing+"',"+""+dbbook_amount+","+"'"+dbbooked_date+"',"+"'"+dbshow_date+"',"+"'"+dbseat_class+"',"+""+dbno_of_seats+");";
+        try{
+            gc.exUp(query);
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, e);
+        }
+    }
     private void SeatComboBoxPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_SeatComboBoxPropertyChange
         // TODO add your handling code here:
     }//GEN-LAST:event_SeatComboBoxPropertyChange
@@ -911,7 +1170,17 @@ public class HomeUser extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
+        GetConnection gc = new GetConnection();
+        Date tod = new Date();
+        Date tom = new Date(new Date().getTime() + 24 *60*60*1000);
+        Date tdatom = new Date(new Date().getTime() + 24 *60*60*1000*2);
+        Date tdatom1 = new Date(new Date().getTime() + 24 *60*60*1000*3);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String date1 = sdf.format(tom);
+        String date2 = sdf.format(tdatom);
+        String date3 = sdf.format(tdatom1);
+        String curdate = sdf.format(tod);
+        String updatequery = "Update showstable set showdates = '"+date1+"|"+date2+"|"+date3+"'"+" where Rdate <= '"+curdate+"'";
         String moviename = "'"+jComboBox1.getSelectedItem().toString()+"'";
         String showdates[];
         String dateout = "";
@@ -921,10 +1190,8 @@ public class HomeUser extends javax.swing.JFrame {
         ticketname.setText(jComboBox1.getSelectedItem().toString());
         String query1 = "select shows,showdates from showstable where moviename ="+moviename+"";
         try{
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cinemadb","root","Bilal_1053");
-            Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery(query1);
+            gc.exUp(updatequery);
+            ResultSet rs = gc.exQu(query1);
             rs.absolute(1);
             showtimings = rs.getString("shows").split("\\|");
             showdates = rs.getString("showdates").split("\\|");
@@ -935,7 +1202,7 @@ public class HomeUser extends javax.swing.JFrame {
                 ShowComboBox.addItem(show);
             }
         }catch(Exception e){
-            System.out.println(e);
+            JOptionPane.showMessageDialog(this, e);
         }
 
         jLayeredPane1.removeAll();
@@ -978,7 +1245,7 @@ public class HomeUser extends javax.swing.JFrame {
             Castlabel.setText(Cast+rs.getString("starcast"));
 
         }catch(Exception e){
-            System.out.println(e);
+            JOptionPane.showMessageDialog(this, e);
         }
         jLayeredPane1.removeAll();
         jLayeredPane1.add(MovieInfoPanel);
@@ -1012,9 +1279,8 @@ public class HomeUser extends javax.swing.JFrame {
     private void acntinfomnubtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acntinfomnubtnActionPerformed
         mainWindow mw = new mainWindow();
         user = mw.getUserName();
-        System.out.println(user);
         jLayeredPane1.removeAll();
-        jLayeredPane1.add(jPanel2);
+        jLayeredPane1.add(AccountInfoPanel);
         repaint();
         revalidate();   // TODO add your handling code here:
     }//GEN-LAST:event_acntinfomnubtnActionPerformed
@@ -1061,7 +1327,7 @@ public class HomeUser extends javax.swing.JFrame {
         String poadd = res.getString("posteraddress");
             prepareMoviePanel(Rd, Lang, Cast, syno, PName, DName, poadd,movie1);
         }catch(Exception e){
-            System.out.println(e);
+            JOptionPane.showMessageDialog(this, e);
         } // TODO add your handling code here:
     }//GEN-LAST:event_upcominglabel1MouseClicked
 
@@ -1107,7 +1373,7 @@ public class HomeUser extends javax.swing.JFrame {
         String poadd = res.getString("posteraddress");
             prepareMoviePanel(Rd, Lang, Cast, syno, PName, DName, poadd,movie1);
         }catch(Exception e){
-            System.out.println(e);
+            JOptionPane.showMessageDialog(this, e);
         }
     }//GEN-LAST:event_posterlabel1MouseClicked
 
@@ -1129,7 +1395,7 @@ public class HomeUser extends javax.swing.JFrame {
         String poadd = res.getString("posteraddress");
             prepareMoviePanel(Rd, Lang, Cast, syno, PName, DName, poadd,movie1);
         }catch(Exception e){
-            System.out.println(e);
+            JOptionPane.showMessageDialog(this, e);
         }
     }//GEN-LAST:event_posterlabel2MouseClicked
 
@@ -1151,7 +1417,7 @@ public class HomeUser extends javax.swing.JFrame {
         String poadd = res.getString("posteraddress");
             prepareMoviePanel(Rd, Lang, Cast, syno, PName, DName, poadd,movie1);
         }catch(Exception e){
-            System.out.println(e);
+            JOptionPane.showMessageDialog(this, e);
         }
     }//GEN-LAST:event_posterlabel3MouseClicked
 
@@ -1173,7 +1439,7 @@ public class HomeUser extends javax.swing.JFrame {
         String poadd = res.getString("posteraddress");
             prepareMoviePanel(Rd, Lang, Cast, syno, PName, DName, poadd,movie1);
         }catch(Exception e){
-            System.out.println(e);
+            JOptionPane.showMessageDialog(this, e);
         }
     }//GEN-LAST:event_upcominglabel2MouseClicked
 
@@ -1195,7 +1461,7 @@ public class HomeUser extends javax.swing.JFrame {
         String poadd = res.getString("posteraddress");
             prepareMoviePanel(Rd, Lang, Cast, syno, PName, DName, poadd,movie1);
         }catch(Exception e){
-            System.out.println(e);
+            JOptionPane.showMessageDialog(this, e);
         }
     }//GEN-LAST:event_upcominglabel3MouseClicked
 
@@ -1203,7 +1469,7 @@ public class HomeUser extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_userLabelMouseEntered
 
-    private void jPanel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseEntered
+    private void AccountInfoPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AccountInfoPanelMouseEntered
        try{
            GetConnection gc = new GetConnection();
            mainWindow mw = new mainWindow();
@@ -1217,9 +1483,9 @@ public class HomeUser extends javax.swing.JFrame {
            emaillabel.setText(res.getString("email"));
            mobilelabel.setText(res.getString("phone"));
        }catch(Exception e){
-           System.out.println(e);
+           JOptionPane.showMessageDialog(this, e);
        }
-    }//GEN-LAST:event_jPanel2MouseEntered
+    }//GEN-LAST:event_AccountInfoPanelMouseEntered
 
     private void logoutbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutbtnActionPerformed
      jLayeredPane1.removeAll();
@@ -1227,6 +1493,98 @@ public class HomeUser extends javax.swing.JFrame {
      mainWindow.main(args);
      dispose();// TODO add your handling code here:
     }//GEN-LAST:event_logoutbtnActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        jLayeredPane1.removeAll();
+        jLayeredPane1.add(AboutPanel);
+        repaint();
+        revalidate();
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        jLayeredPane1.removeAll();
+        jLayeredPane1.add(Dashboard);
+        repaint();
+        revalidate();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void bkdtcktshistbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bkdtcktshistbtnActionPerformed
+        
+        GetConnection gc = new GetConnection();
+        mainWindow mw = new mainWindow();
+        String name = mw.getUserName();
+        String query = "select * from bookings where user_id = '"+name+"' order by booked_date;";
+        int i = 0;
+        Bookingtable.removeAll();
+        try{
+            ResultSet res = gc.exQu(query);
+            while(res.next()){
+            Bookingtable.setValueAt(res.getString("booking_id"), i, 0);
+            Bookingtable.setValueAt(res.getString("movie"), i, 1);
+            Bookingtable.setValueAt(res.getString("no_of_seats"), i, 2);
+            Bookingtable.setValueAt(res.getString("Seat_class"), i, 3);
+            Bookingtable.setValueAt(res.getString("show_date"), i, 4);
+            Bookingtable.setValueAt(res.getString("show_timing"), i, 5);
+            Bookingtable.setValueAt(res.getString("booked_date"), i, 6);
+            Bookingtable.setValueAt(res.getString("booked_amount"), i, 7);
+            bookingcombo.addItem(Bookingtable.getValueAt(i, 0).toString());
+            i++;
+            }
+ 
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, e);
+        }
+        if(bookingcombo.getItemCount() == 0){
+            jButton7.setVisible(false);
+            bookingcombo.setVisible(false);
+            jLabel20.setText("No Bookings Available");
+            Bookingtable.setVisible(false);
+        }else{
+            jButton7.setVisible(true);
+            bookingcombo.setVisible(true);
+            jLabel20.setText("-->To Cancel a booking select the Booking id below and press Cancel Booking Button<--");
+        }
+        jLayeredPane1.removeAll();
+        jLayeredPane1.add(BookedPanel);
+        repaint();
+        revalidate();
+    }//GEN-LAST:event_bkdtcktshistbtnActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        bookingcombo.removeAllItems();
+        jLayeredPane1.removeAll();
+        jLayeredPane1.add(Dashboard);
+        repaint();
+        revalidate();
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        int val =JOptionPane.showConfirmDialog(this, "Confirm Cancellation?");
+        
+        if(val == JOptionPane.YES_OPTION){
+        try{
+            Bookingtable.setRowHeight(bookingcombo.getSelectedIndex(), 1);
+            
+           GetConnection gc = new GetConnection();
+        gc.exUp("delete from bookings where booking_id = "+bookingcombo.getSelectedItem().toString()+"");
+           bookingcombo.removeItemAt(bookingcombo.getSelectedIndex());
+           if(bookingcombo.getItemCount() == 0){
+            jButton7.setVisible(false);
+            bookingcombo.setVisible(false);
+            jLabel20.setText("No Bookings Available");
+            Bookingtable.setVisible(false);
+           }
+            else{
+            jButton7.setVisible(true);
+            bookingcombo.setVisible(true);
+            jLabel20.setText("-->To Cancel a booking select the Booking id below and press Cancel Booking Button<--");
+        }
+        
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, e);
+        }}
+        
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     public void prepareMoviePanel(String reldt,String lang,String star,String Syno,String pro,String dir,String add,String movie){
         MoviePosterLabel.setIcon(new ImageIcon(add));
@@ -1278,6 +1636,10 @@ public class HomeUser extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel AboutPanel;
+    private javax.swing.JPanel AccountInfoPanel;
+    private javax.swing.JPanel BookedPanel;
+    private javax.swing.JTable Bookingtable;
     private javax.swing.JLabel Castlabel;
     private javax.swing.JPanel Dashboard;
     private javax.swing.JComboBox<String> DateComboBox;
@@ -1303,6 +1665,7 @@ public class HomeUser extends javax.swing.JFrame {
     private javax.swing.JLabel billmoviedate;
     private javax.swing.JLabel billmoviename;
     private javax.swing.JMenuItem bkdtcktshistbtn;
+    private javax.swing.JComboBox<String> bookingcombo;
     private javax.swing.JMenuItem bookticketmenubtn;
     private javax.swing.JLabel directorlabel;
     private javax.swing.JLabel emaillabel;
@@ -1312,6 +1675,9 @@ public class HomeUser extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
@@ -1321,7 +1687,12 @@ public class HomeUser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1335,7 +1706,8 @@ public class HomeUser extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel languageslabel;
     private javax.swing.JMenuItem logoutbtn;
     private javax.swing.JLabel mobilelabel;

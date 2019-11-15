@@ -7,6 +7,7 @@ package Login;
 
 
 import Admin.HomeAdmin;
+import Admin.GetConnection;
 import User.HomeUser;
 import java.awt.Color;
 import java.sql.*;
@@ -61,8 +62,8 @@ public class mainWindow extends javax.swing.JFrame {
         UILname = new javax.swing.JTextField();
         UIUname = new javax.swing.JTextField();
         UIPassword = new javax.swing.JTextField();
-        UIPhone = new javax.swing.JTextField();
         UIEmail = new javax.swing.JTextField();
+        UIPhone = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -93,13 +94,12 @@ public class mainWindow extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(64, 64, 64));
         jPanel1.setForeground(new java.awt.Color(204, 0, 51));
         jPanel1.setPreferredSize(new java.awt.Dimension(770, 19));
 
         close.setBackground(new java.awt.Color(0, 0, 0));
         close.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
-        close.setForeground(new java.awt.Color(204, 0, 51));
         close.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         close.setText("X");
         close.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -116,7 +116,6 @@ public class mainWindow extends javax.swing.JFrame {
 
         mini.setBackground(new java.awt.Color(0, 0, 0));
         mini.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
-        mini.setForeground(new java.awt.Color(0, 51, 102));
         mini.setText("-");
         mini.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -130,7 +129,7 @@ public class mainWindow extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setBackground(new java.awt.Color(204, 204, 204));
         jLabel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 jLabel1MouseDragged(evt);
@@ -167,7 +166,7 @@ public class mainWindow extends javax.swing.JFrame {
 
         Login.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(204, 0, 51));
+        jPanel2.setBackground(new java.awt.Color(170, 170, 170));
 
         userName.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         userName.addActionListener(new java.awt.event.ActionListener() {
@@ -179,14 +178,16 @@ public class mainWindow extends javax.swing.JFrame {
         loginpwd.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jLabel2.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(64, 64, 64));
         jLabel2.setText("USERNAME:");
 
         jLabel3.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(64, 64, 64));
         jLabel3.setText("PASSWORD:");
 
-        loginbtn.setBackground(new java.awt.Color(0, 0, 0));
+        loginbtn.setBackground(new java.awt.Color(64, 64, 64));
         loginbtn.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
-        loginbtn.setForeground(new java.awt.Color(204, 0, 51));
+        loginbtn.setForeground(new java.awt.Color(204, 204, 204));
         loginbtn.setText("Login");
         loginbtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, new java.awt.Color(153, 0, 51), new java.awt.Color(204, 0, 51), new java.awt.Color(204, 0, 51), new java.awt.Color(153, 0, 51)));
         loginbtn.setBorderPainted(false);
@@ -245,15 +246,16 @@ public class mainWindow extends javax.swing.JFrame {
 
         Login.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 450));
 
-        jPanel3.setBackground(new java.awt.Color(153, 0, 51));
+        jPanel3.setBackground(new java.awt.Color(187, 187, 187));
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(64, 64, 64));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Don't have an account?");
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setBackground(new java.awt.Color(64, 64, 64));
         jButton2.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(153, 0, 51));
+        jButton2.setForeground(new java.awt.Color(204, 204, 204));
         jButton2.setText("Sign Up");
         jButton2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 0, 51)));
         jButton2.setBorderPainted(false);
@@ -264,12 +266,13 @@ public class mainWindow extends javax.swing.JFrame {
         });
 
         jLabel5.setFont(jLabel4.getFont());
+        jLabel5.setForeground(new java.awt.Color(64, 64, 64));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Having Trouble Signing in?");
 
-        jButton3.setBackground(jButton2.getBackground());
+        jButton3.setBackground(new java.awt.Color(64, 64, 64));
         jButton3.setFont(jButton2.getFont());
-        jButton3.setForeground(jButton2.getForeground());
+        jButton3.setForeground(new java.awt.Color(204, 204, 204));
         jButton3.setText("Forgot Password");
         jButton3.setBorder(jButton2.getBorder());
         jButton3.setBorderPainted(false);
@@ -317,7 +320,7 @@ public class mainWindow extends javax.swing.JFrame {
 
         jLayeredPane1.add(Login, "card2");
 
-        Signup.setBackground(new java.awt.Color(153, 0, 51));
+        Signup.setBackground(new java.awt.Color(170, 170, 170));
 
         UIFname.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         UIFname.addActionListener(new java.awt.event.ActionListener() {
@@ -347,13 +350,6 @@ public class mainWindow extends javax.swing.JFrame {
             }
         });
 
-        UIPhone.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        UIPhone.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UIPhoneActionPerformed(evt);
-            }
-        });
-
         UIEmail.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         UIEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -361,11 +357,19 @@ public class mainWindow extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(0, 0, 0));
+        UIPhone.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        UIPhone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UIPhoneActionPerformed(evt);
+            }
+        });
+
+        jButton4.setBackground(new java.awt.Color(64, 64, 64));
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(204, 0, 51));
+        jButton4.setForeground(new java.awt.Color(204, 204, 204));
         jButton4.setText("Sign Up");
         jButton4.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(204, 0, 51), new java.awt.Color(204, 0, 51)));
+        jButton4.setBorderPainted(false);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -373,26 +377,32 @@ public class mainWindow extends javax.swing.JFrame {
         });
 
         jLabel6.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(64, 64, 64));
         jLabel6.setText("First Name:");
 
         jLabel7.setFont(jLabel6.getFont());
+        jLabel7.setForeground(new java.awt.Color(64, 64, 64));
         jLabel7.setText("Last Name:");
 
         jLabel8.setFont(jLabel6.getFont());
+        jLabel8.setForeground(new java.awt.Color(64, 64, 64));
         jLabel8.setText("UserName:");
 
         jLabel9.setFont(jLabel6.getFont());
+        jLabel9.setForeground(new java.awt.Color(64, 64, 64));
         jLabel9.setText("Password:");
 
         jLabel10.setFont(jLabel6.getFont());
+        jLabel10.setForeground(new java.awt.Color(64, 64, 64));
         jLabel10.setText("Email:");
 
         jLabel11.setFont(jLabel6.getFont());
+        jLabel11.setForeground(new java.awt.Color(64, 64, 64));
         jLabel11.setText("Phone Number:");
 
-        backbtn.setBackground(new java.awt.Color(0, 0, 0));
+        backbtn.setBackground(new java.awt.Color(64, 64, 64));
         backbtn.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        backbtn.setForeground(new java.awt.Color(204, 0, 51));
+        backbtn.setForeground(new java.awt.Color(204, 204, 204));
         backbtn.setText("<---");
         backbtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         backbtn.setBorderPainted(false);
@@ -411,87 +421,90 @@ public class mainWindow extends javax.swing.JFrame {
             SignupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SignupLayout.createSequentialGroup()
                 .addGroup(SignupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(SignupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, SignupLayout.createSequentialGroup()
-                            .addGap(225, 225, 225)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, SignupLayout.createSequentialGroup()
-                            .addGap(42, 42, 42)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(UIFname, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(SignupLayout.createSequentialGroup()
-                            .addGap(42, 42, 42)
-                            .addGroup(SignupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGap(35, 35, 35)
-                            .addGroup(SignupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(UIEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(UIPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(UIPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(UIUname, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(UILname, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(SignupLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(backbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(SignupLayout.createSequentialGroup()
-                        .addGap(98, 98, 98)
-                        .addComponent(displayMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(331, Short.MAX_VALUE))
+                        .addGap(215, 215, 215)
+                        .addGroup(SignupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, SignupLayout.createSequentialGroup()
+                                .addGap(183, 183, 183)
+                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, SignupLayout.createSequentialGroup()
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(UIFname, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(SignupLayout.createSequentialGroup()
+                                .addGroup(SignupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel11))
+                                .addGap(35, 35, 35)
+                                .addGroup(SignupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(UIPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(UIEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(UIPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(UIUname, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(UILname, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(241, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SignupLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(displayMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(160, 160, 160))
         );
         SignupLayout.setVerticalGroup(
             SignupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SignupLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(backbtn)
-                .addGap(25, 25, 25)
+                .addGap(20, 20, 20)
                 .addGroup(SignupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(UIFname))
+                    .addComponent(UIFname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addGroup(SignupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(UILname))
+                    .addComponent(UILname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addGroup(SignupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(UIUname))
+                    .addComponent(UIUname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(SignupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(UIPassword))
+                    .addComponent(UIPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(SignupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(UIPhone))
+                    .addComponent(UIEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addGroup(SignupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(UIEmail))
+                    .addComponent(UIPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
+                .addGap(29, 29, 29)
                 .addComponent(displayMessage, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         jLayeredPane1.add(Signup, "card3");
 
-        Forg.setBackground(new java.awt.Color(153, 0, 51));
+        Forg.setBackground(new java.awt.Color(170, 170, 170));
 
         jLabel12.setFont(jLabel2.getFont());
+        jLabel12.setForeground(new java.awt.Color(64, 64, 64));
         jLabel12.setText("Username:");
 
         jLabel13.setFont(jLabel12.getFont());
+        jLabel13.setForeground(new java.awt.Color(64, 64, 64));
         jLabel13.setText("Registered Mobile:");
 
-        forgbtn.setBackground(new java.awt.Color(0, 0, 0));
+        forgbtn.setBackground(new java.awt.Color(64, 64, 64));
         forgbtn.setFont(loginbtn.getFont());
-        forgbtn.setForeground(new java.awt.Color(153, 0, 51));
+        forgbtn.setForeground(new java.awt.Color(204, 204, 204));
         forgbtn.setText("Get Password");
         forgbtn.setBorder(loginbtn.getBorder());
         forgbtn.setBorderPainted(false);
@@ -502,11 +515,12 @@ public class mainWindow extends javax.swing.JFrame {
         });
 
         DisplayPass.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        DisplayPass.setForeground(new java.awt.Color(64, 64, 64));
         DisplayPass.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        jButton5.setBackground(new java.awt.Color(0, 0, 0));
+        jButton5.setBackground(new java.awt.Color(64, 64, 64));
         jButton5.setFont(backbtn.getFont());
-        jButton5.setForeground(new java.awt.Color(204, 0, 51));
+        jButton5.setForeground(new java.awt.Color(204, 204, 204));
         jButton5.setText(backbtn.getText());
         jButton5.setBorder(backbtn.getBorder());
         jButton5.setBorderPainted(false);
@@ -575,9 +589,9 @@ public class mainWindow extends javax.swing.JFrame {
                   UIFname.setText("");
                   UILname.setText("");
                   UIPassword.setText("");
-                  UIPhone.setText("");
-                  UIUname.setText("");
                   UIEmail.setText("");
+                  UIUname.setText("");
+                  UIPhone.setText("");
     }
     private void jLabel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseDragged
         int x = evt.getXOnScreen();
@@ -591,25 +605,24 @@ public class mainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1MousePressed
 
     private void closeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseEntered
-    jPanel1.setBackground(new Color(204, 0, 51));
-    close.setForeground(Color.BLACK);
-mini.setForeground(new Color(204, 0, 51));// TODO add your handling code here:
+    
+    close.setForeground(new Color(204, 0, 51));
+
     }//GEN-LAST:event_closeMouseEntered
 
     private void miniMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniMouseEntered
-       jPanel1.setBackground(new Color(0, 51, 102));
-    mini.setForeground(Color.BLACK);
-    close.setForeground(new Color(0, 51, 102));// TODO add your handling code here:
+       
+    mini.setForeground(new Color(204, 0, 51));// TODO add your handling code here:
     }//GEN-LAST:event_miniMouseEntered
 
     private void closeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseExited
-       jPanel1.setBackground(Color.BLACK);
-    close.setForeground(new Color(204, 0, 51)); // TODO add your handling code here:
+       
+    close.setForeground(Color.BLACK); // TODO add your handling code here:
     }//GEN-LAST:event_closeMouseExited
 
     private void miniMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniMouseExited
-        jPanel1.setBackground(Color.BLACK);
-    mini.setForeground(new Color(0, 51, 102)); // TODO add your handling code here:
+        
+    mini.setForeground(Color.BLACK); // TODO add your handling code here:
     }//GEN-LAST:event_miniMouseExited
 
     private void closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseClicked
@@ -647,13 +660,13 @@ mini.setForeground(new Color(204, 0, 51));// TODO add your handling code here:
         // TODO add your handling code here:
     }//GEN-LAST:event_UIPasswordActionPerformed
 
-    private void UIPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UIPhoneActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UIPhoneActionPerformed
-
     private void UIEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UIEmailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_UIEmailActionPerformed
+
+    private void UIPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UIPhoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UIPhoneActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
       jLayeredPane1.removeAll();
@@ -669,29 +682,22 @@ mini.setForeground(new Color(204, 0, 51));// TODO add your handling code here:
           String fname = "'"+UIFname.getText()+"'";
           String lname = "'"+UILname.getText()+"'";
           String passwd = "'"+UIPassword.getText()+"'";
-          String email = "'"+UIEmail.getText()+"'";
           String phone = "'"+UIPhone.getText()+"'";
+          String email = "'"+UIEmail.getText()+"'";
           String uname = "'"+UIUname.getText()+"'";
+          GetConnection gc = new GetConnection();
           
-          Class.forName("com.mysql.jdbc.Driver");
-          Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cinemadb","root","Bilal_1053");
-          Statement st = con.createStatement();
-          ResultSet rs = st.executeQuery("select username from userinfo");
+          ResultSet rs = gc.exQu("select username from userinfo");
           while(rs.next()){
               if(rs.getString(1).equals(UIUname.getText())){
-                  displayMessage.setText("User Already Exists");
-                  clearFields();
-                  
+                  displayMessage.setText("User Already Exists");    
                   return;
               }
           }
-          st.executeUpdate("insert into userinfo values("+fname+","+lname+","+uname+","+email+","+phone+");");
-          st.executeUpdate("insert into passtable values("+uname+","+passwd+");");
+          gc.exUp("insert into userinfo values("+fname+","+lname+","+uname+","+phone+","+email+");");
+          gc.exUp("insert into passtable values("+uname+","+passwd+");");
           displayMessage.setText("Thanks for Signing UP");
-          displayMessage.setText("User Already Exists");
-                  clearFields();
-          
-          
+          clearFields();
       }catch(Exception e){
           JOptionPane.showMessageDialog(rootPane, e.toString());
       }
@@ -701,18 +707,16 @@ mini.setForeground(new Color(204, 0, 51));// TODO add your handling code here:
        String uname = forguname.getText();
        String mob = forgmob.getText();
        String uname1 = "'"+forguname.getText()+"'";
-       
+       GetConnection gc = new GetConnection();
         try{
-           Class.forName("com.mysql.jdbc.Driver");
-          Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cinemadb","root","Bilal_1053");
-          Statement st = con.createStatement();
-          ResultSet rs = st.executeQuery("Select * from userinfo");
+           
+          ResultSet rs = gc.exQu("Select * from userinfo");
           
           while(rs.next()){
               
               if(rs.getString(3).equals(uname) && rs.getString(4).equals(mob)){
                   
-                 ResultSet rs1 = st.executeQuery("select passwd from passtable where userid = "+uname1+"");
+                 ResultSet rs1 = gc.exQu("select passwd from passtable where userid = "+uname1+"");
                  rs1.next();
                  DisplayPass.setVisible(true);
                  DisplayPass.setText("Your Password is "+rs1.getString(1));
@@ -724,7 +728,7 @@ mini.setForeground(new Color(204, 0, 51));// TODO add your handling code here:
               }
           }
        }catch(Exception e){
-            System.out.println(e);
+            JOptionPane.showMessageDialog(this, e.toString());
        }
 // TODO add your handling code here:
     }//GEN-LAST:event_forgbtnActionPerformed
@@ -740,14 +744,20 @@ mini.setForeground(new Color(204, 0, 51));// TODO add your handling code here:
       jLayeredPane1.removeAll();
       jLayeredPane1.add(Login);
         repaint();
-        revalidate();  // TODO add your handling code here:
+        revalidate();
+       
+// TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void loginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbtnActionPerformed
         username = userName.getText();
         String uipwd = new String(loginpwd.getPassword());
-        String str[] = new String[40];
-        HomeUser Hu = new HomeUser();
+        if(((username.equals("ifzalkola") && uipwd.equals("32825878"))) || (username.equals("sayeemmatta") && uipwd.equals("123456"))){
+            dispose();
+            new HomeAdmin().setVisible(true);
+            
+        }
+        else{
     try{
    Class.forName("com.mysql.jdbc.Driver");
           Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cinemadb","root","Bilal_1053");
@@ -756,7 +766,7 @@ mini.setForeground(new Color(204, 0, 51));// TODO add your handling code here:
           while(rs.next()){
               if(userName.getText().equals(rs.getString(1)) && uipwd.equals(rs.getString(2))){
                   dispose();
-                  HomeUser.main(str);
+                  new HomeUser().setVisible(true);
                   return;
               }else{
                   lgndisplay.setText("Username or Password Incorrect");
@@ -764,8 +774,9 @@ mini.setForeground(new Color(204, 0, 51));// TODO add your handling code here:
           }
     
 }catch(Exception e){
-        System.out.println(e);
-}// TODO add your handling code here:
+       JOptionPane.showMessageDialog(this, e.toString());
+}
+        }// TODO add your handling code here:
     }//GEN-LAST:event_loginbtnActionPerformed
     public String getUserName(){
         return username;

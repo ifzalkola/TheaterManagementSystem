@@ -23,4 +23,10 @@ public class GetConnection {
         
         return rs;
     }
+    public void exUp(String query) throws Exception{
+        Class.forName("com.mysql.jdbc.Driver");
+          Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cinemadb","root","Bilal_1053");
+          Statement st = con.createStatement();
+          st.executeUpdate(query);
+    }
 }

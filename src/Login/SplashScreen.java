@@ -26,7 +26,10 @@ public class SplashScreen extends javax.swing.JFrame {
         
         for(i=0; i<=100;i++){
             ss.jProgressBar1.setValue(i);
-            Thread.sleep(30);
+            if(i==95 || i==50){
+                Thread.sleep(1000);
+            }
+            Thread.sleep(15);
             
         }
         }catch(Exception e){
@@ -61,12 +64,22 @@ public class SplashScreen extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jProgressBar1.setBackground(new java.awt.Color(0, 0, 0));
-        jProgressBar1.setForeground(new java.awt.Color(204, 0, 51));
-        jProgressBar1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(204, 0, 51), null, null), "", javax.swing.border.TitledBorder.RIGHT, javax.swing.border.TitledBorder.TOP));
+        jProgressBar1.setForeground(new java.awt.Color(204, 204, 204));
+        jProgressBar1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 310, 770, 22));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Pc solution\\Documents\\logo1.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.JLabel() {
+            public javax.swing.Icon getIcon() {
+                try {
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL("file:/C:/Users/Pc solution/Documents/logo.jpg")
+                    );
+                } catch (java.net.MalformedURLException e) {
+                }
+                return null;
+            }
+        }.getIcon());
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 310));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
