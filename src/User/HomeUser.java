@@ -1509,7 +1509,8 @@ public class HomeUser extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void bkdtcktshistbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bkdtcktshistbtnActionPerformed
-        
+        Bookingtable.setVisible(true);
+        Bookingtable.setRowHeight(24);
         GetConnection gc = new GetConnection();
         mainWindow mw = new mainWindow();
         String name = mw.getUserName();
